@@ -1,0 +1,21 @@
+title: Ertis Seferi
+description: "MS Computer Science — Robotics, Computer Vision & Machine Learning"
+baseurl: ""
+url: "https://ertisseferi.github.io"
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
