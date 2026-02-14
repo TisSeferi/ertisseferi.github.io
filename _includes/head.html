@@ -5,11 +5,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 <script>
   (function() {
     var t = localStorage.getItem('theme') ||
       (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', t);
+    var d = document.documentElement;
+    d.setAttribute('data-theme', t);
+    if (t === 'dark') {
+      d.style.backgroundColor = '#0b0f1a';
+      d.style.color = '#e2e8f0';
+    }
   })();
 </script>
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
