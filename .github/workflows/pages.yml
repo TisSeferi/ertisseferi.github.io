@@ -26,13 +26,18 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
-        run: JEKYLL_NO_BUNDLER_REQUIRE=1 bundle exec jekyll build
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      - name: List build output
+        run: ls -R _site/assets/ || echo "No assets dir found"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
 
   deploy:
     environment:
