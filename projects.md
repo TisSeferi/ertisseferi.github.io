@@ -7,7 +7,7 @@ permalink: /projects/
 <div class="card-grid">
 {% for project in site.projects %}
 <div class="card">
-  <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+  <h3><a href="{{ project.repo }}" target="_blank">{{ project.title }}</a></h3>
   <p>{{ project.description }}</p>
 </div>
 {% endfor %}

@@ -5,8 +5,7 @@ url: "https://ertisseferi.github.io"
 
 collections:
   projects:
-    output: true
-    permalink: /projects/:name/
+    output: false
 
 defaults:
   - scope:
